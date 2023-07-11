@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: #e8e8e8;
+            font-family: 'Zen Dots', cursive;
+        }
+
+        .clock-container {
+            cursor: pointer;
+            width: 400px;
+            min-width: 150px;
+            padding: 20px;
+            border-radius: 4px;
+            background: #e8e8e8;
+            color: #090909;
+            margin: 40vh auto;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #FFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .clock-container:hover {
+            box-shadow: -6px -6px 12px #c5c5c5, 6px 6px 12px #FFF;
+        }
+
+        #hours,
+        #minutes {
+            font-size: 4rem;
+            font-weight: 300;
+            padding: 5px;
+        }
+
+        #seconds{
+            margin-top: 10px;
+            font-size: 1.8rem;
+            width: 60px;
+            min-width: 40px;
+        }
+
+        #separator {
+            line-height: 0;
+            margin-top: 10px;
+        }
+
+        #separator span {
+            font-size: 90px;
+            font-weight: 500;
+        }
+
+        .clock-container>div{
+            text-shadow: 2px 2px 4px #c5c5c5, -2px -2px 4px #FFF;
+        }
+
+        .clock-container:hover>div{
+            text-shadow: -2px -2px 4px #c5c5c5, 2px 2px 4px #FFF;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="clock-container">
+        <div id="hours">
+            <p></p>
+        </div>
+        <div id="separator">
+            <span>:</span>
+        </div>
+        <div id="minutes">
+            <p></p>
+        </div>
+        <div id="seconds">
+            <p></p>
+        </div>
+    </div>
+
+    <script>
+        let time = () => {
+            let d = new Date()
+            let h = d.getHours()
+            let m = d.getMinutes()
+            let sec = d.getSeconds()
+
+            let hourText = document.getElementById("hours")
+            hourText.innerText = h;
+
+            let minuteText = document.getElementById("minutes")
+            minuteText.innerText = m;
+            let secondText = document.getElementById("seconds")
+            secondText.innerText = sec;
+        }
+        setInterval(time, 1000);
+    </script>
+</body>
+
+</html>
