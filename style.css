@@ -1,0 +1,57 @@
+body {
+            background: #e8e8e8;
+            font-family: 'Zen Dots', cursive;
+        }
+
+        .clock-container {
+            cursor: pointer;
+            width: 400px;
+            min-width: 150px;
+            padding: 20px;
+            border-radius: 4px;
+            background: #e8e8e8;
+            color: #090909;
+            margin: 40vh auto;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #FFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .clock-container:hover {
+            box-shadow: -6px -6px 12px #c5c5c5, 6px 6px 12px #FFF;
+        }
+
+        #hours,
+        #minutes {
+            font-size: 4rem;
+            font-weight: 300;
+            padding: 5px;
+        }
+
+        #seconds{
+            margin-top: 10px;
+            font-size: 1.8rem;
+            width: 60px;
+            min-width: 40px;
+        }
+
+        #separator {
+            line-height: 0;
+            margin-top: 10px;
+        }
+
+        #separator span {
+            font-size: 90px;
+            font-weight: 500;
+        }
+
+        .clock-container>div{
+            text-shadow: 2px 2px 4px #c5c5c5, -2px -2px 4px #FFF;
+        }
+
+        .clock-container:hover>div{
+            text-shadow: -2px -2px 4px #c5c5c5, 2px 2px 4px #FFF;
+        }
